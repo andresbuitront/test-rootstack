@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-jobs',
@@ -8,10 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class JobsComponent implements OnInit {
   @Input() job: any = {};
   @Input() listJobs: any[] = [];
+  @Output() updateView = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  fly(job: any) {
+    this.updateView.emit(job)
+  }
 }

@@ -8,9 +8,10 @@
     </div>
 
     <!-- Login Form -->
-    <form class="item px-4" #f="ngForm" (ngSubmit) ="f.form.valid && login(f)" >
-      <input type="email" id="login" class="fadeIn second form-control mt-4" name="email" placeholder="Email" ngModel >
-      <input type="password" id="password" class="fadeIn third form-control mt-2 " name="password" placeholder="password" ngModel >
+    <form class="item px-4" #f="ngForm" (ngSubmit)="f.form.valid && login(f)">
+      <input type="email" id="login" class="fadeIn second form-control mt-4" name="email" placeholder="Email" ngModel>
+      <input type="password" id="password" class="fadeIn third form-control mt-2 " name="password"
+        placeholder="password" ngModel>
       <input type="submit" title="Sign in" class="fadeIn fourth mt-3" style="cursor: pointer">
     </form>
 

@@ -57,6 +57,19 @@ export class MapComponent implements OnInit {
       .addTo(<any>this.mapbox);
   }
 
+  buildMarkers2(listJobs: any[]) {
+    listJobs.forEach(element => {
+      element.popup = new Mapboxgl.Popup({ offset: 25 }).setText(
+        element.description
+      );
+      element.marker =
+        new Mapboxgl.Marker({ draggable: false })
+          .setLngLat([element.longitude, element.latitude])
+          .setPopup(element.popup) // sets a popup on this marker
+          .addTo(<any>this.mapbox);
+    });
+  }
+
   getProfile(token: string) {
     this.requestBase.getData(null, true, "auth/me", token).subscribe(
       data => {
@@ -74,11 +87,21 @@ export class MapComponent implements OnInit {
         console.log(data);
         const response = JSON.parse(data)
         this.listJobs = response.data;
+        this.buildMarkers2(this.listJobs);
       },
       error => {
         console.log(error);
       }
     );
+  }
+  updateView(job: any) {
+
+    this.mapbox?.flyTo({
+      center: [
+        job.longitude, job.latitude
+      ],
+      essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    });
   }
   logOut() {
     this.sessionBase.dropSession();

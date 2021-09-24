@@ -6,6 +6,7 @@
                 <th scope="col">title</th>
                 <th scope="col">status</th>
                 <th scope="col">assigned_to</th>
+                <th scope="col">ir</th>
             </tr>
         </thead>
         <tbody>
@@ -14,6 +15,10 @@
                 <td>{{job.title}}</td>
                 <td>{{job.status}}</td>
                 <td>{{job.assigned_to}}</td>
+                <td class="ui-button-edit-table">
+                    <button class="btn btn-danger" type="button" pButton icon="fa fa-pencil"
+                        (click)="fly(job)"></button>
+                </td>
             </tr>
         </tbody>
     </table>
