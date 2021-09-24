@@ -1,0 +1,20 @@
+<div class="row col-sm-4 anyClass">
+    <table class="table mx-2 mt-1" style="z-index: 100; background-color: white">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">title</th>
+                <th scope="col">status</th>
+                <th scope="col">assigned_to</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let job of listJobs; let i= index">
+                <th>{{job.id}}</th>
+                <td>{{job.title}}</td>
+                <td>{{job.status}}</td>
+                <td>{{job.assigned_to}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

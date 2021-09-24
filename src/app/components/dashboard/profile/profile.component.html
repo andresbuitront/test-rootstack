@@ -1,0 +1,22 @@
+<div class="row col-sm-4">
+    <div class="card" style="width: 18rem; z-index: 100;">
+        <img src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg"
+            class="card-img-top align-self-center" style="width: 60%; height: 60%;" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{profile.name}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a>
+                    Id:{{profile.id}}</a>
+            </li>
+            <li class="list-group-item"><a>
+                    Email:{{profile.email}}</a></li>
+            <li class="list-group-item"><a>
+                    Verified:{{profile.email_verified_at| date : 'yyyy-MM-dd'}}</a></li>
+            <li class="list-group-item"><a>
+                    Created:{{profile.created_at | date : 'yyyy-MM-dd'}}</a></li>
+            <li class="list-group-item"><a>
+                    Updated: {{profile.updated_at| date : 'yyyy-MM-dd'}}</a></li>
+        </ul>
+    </div>
+</div>
